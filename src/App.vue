@@ -1,18 +1,23 @@
 <template>
   <div id="app">
     <HelloWorld>
-      Something bad happened.
+      <current-user v-slot="{ user }">
+        {{ user.firstName }}
+      </current-user>
     </HelloWorld>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import CurrentUser from './components/CurrentUser';
 
 export default {
   name: 'app',
+
   components: {
-    HelloWorld
+    HelloWorld,
+    CurrentUser
   }
 }
 </script>
